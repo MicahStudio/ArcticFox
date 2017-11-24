@@ -1,0 +1,11 @@
+D:\ArcticFox\Src\ArcticFoxFramework\ArcticFox\bin\Debug\netcoreapp2.0\ArcticFox.deps.json
+D:\ArcticFox\Src\ArcticFoxFramework\ArcticFox\bin\Debug\netcoreapp2.0\ArcticFox.dll
+D:\ArcticFox\Src\ArcticFoxFramework\ArcticFox\bin\Debug\netcoreapp2.0\ArcticFox.pdb
+D:\ArcticFox\Src\ArcticFoxFramework\ArcticFox\obj\Debug\netcoreapp2.0\ArcticFox.csproj.CoreCompileInputs.cache
+D:\ArcticFox\Src\ArcticFoxFramework\ArcticFox\obj\Debug\netcoreapp2.0\ArcticFox.AssemblyInfoInputs.cache
+D:\ArcticFox\Src\ArcticFoxFramework\ArcticFox\obj\Debug\netcoreapp2.0\ArcticFox.AssemblyInfo.cs
+D:\ArcticFox\Src\ArcticFoxFramework\ArcticFox\obj\Debug\netcoreapp2.0\ArcticFox.dll
+D:\ArcticFox\Src\ArcticFoxFramework\ArcticFox\obj\Debug\netcoreapp2.0\ArcticFox.pdb
+D:\ArcticFox\Src\ArcticFoxFramework\ArcticFox\obj\Debug\netcoreapp2.0\ArcticFox.csprojResolveAssemblyReference.cache
+D:\ArcticFox\Src\ArcticFoxFramework\ArcticFox\bin\Debug\netcoreapp2.0\Microsoft.EntityFrameworkCore.dll
+D:\ArcticFox\Src\ArcticFoxFramework\ArcticFox\bin\Debug\netcoreapp2.0\Microsoft.EntityFrameworkCore.xml

@@ -1,0 +1,15 @@
+D:\ArcticFox\Src\ArcticFoxFramework\ArcticFox.Application\bin\Debug\netcoreapp2.0\ArcticFox.Application.deps.json
+D:\ArcticFox\Src\ArcticFoxFramework\ArcticFox.Application\bin\Debug\netcoreapp2.0\ArcticFox.Application.dll
+D:\ArcticFox\Src\ArcticFoxFramework\ArcticFox.Application\bin\Debug\netcoreapp2.0\ArcticFox.Application.pdb
+D:\ArcticFox\Src\ArcticFoxFramework\ArcticFox.Application\obj\Debug\netcoreapp2.0\ArcticFox.Application.csprojResolveAssemblyReference.cache
+D:\ArcticFox\Src\ArcticFoxFramework\ArcticFox.Application\obj\Debug\netcoreapp2.0\ArcticFox.Application.csproj.CoreCompileInputs.cache
+D:\ArcticFox\Src\ArcticFoxFramework\ArcticFox.Application\obj\Debug\netcoreapp2.0\ArcticFox.Application.AssemblyInfoInputs.cache
+D:\ArcticFox\Src\ArcticFoxFramework\ArcticFox.Application\obj\Debug\netcoreapp2.0\ArcticFox.Application.AssemblyInfo.cs
+D:\ArcticFox\Src\ArcticFoxFramework\ArcticFox.Application\obj\Debug\netcoreapp2.0\ArcticFox.Application.dll
+D:\ArcticFox\Src\ArcticFoxFramework\ArcticFox.Application\obj\Debug\netcoreapp2.0\ArcticFox.Application.pdb
+D:\ArcticFox\Src\ArcticFoxFramework\ArcticFox.Application\bin\Debug\netcoreapp2.0\ArcticFox.Core.dll
+D:\ArcticFox\Src\ArcticFoxFramework\ArcticFox.Application\bin\Debug\netcoreapp2.0\ArcticFox.dll
+D:\ArcticFox\Src\ArcticFoxFramework\ArcticFox.Application\bin\Debug\netcoreapp2.0\ArcticFox.EntityFrameworkCore.dll
+D:\ArcticFox\Src\ArcticFoxFramework\ArcticFox.Application\bin\Debug\netcoreapp2.0\ArcticFox.EntityFrameworkCore.pdb
+D:\ArcticFox\Src\ArcticFoxFramework\ArcticFox.Application\bin\Debug\netcoreapp2.0\ArcticFox.pdb
+D:\ArcticFox\Src\ArcticFoxFramework\ArcticFox.Application\bin\Debug\netcoreapp2.0\ArcticFox.Core.pdb
