@@ -1,0 +1,12 @@
+这个框架是一个简单的给予abp的结构搭建的框架，通过查看abp的源码，abp中的appAervice是基于Controller的;
+目前这个框架只是用来做webapi；
+实现了异常拦截
+    app.UseMiddleware(typeof(ExceptionEvent));
+ExceptionEvent类必须有一个RequestDelegate类型参数的构造函数，有一个异步的Invoke方法，参数为HttpContext，这里取巧了一下，因为这个中间件是拦截所有请求的，在Invoke中需要RequestDelegate对象比如await next(context)去执行本该执行的方法，将该方法用try包含则能够拦截到所有的异常。
+
+而Controller中有两个可重写方法，分别是OnActionExecuting以及OnActionExecuted代表了Action的访问以及返回，这里可以进行审计日志的记录，信息很全面，两个方法包含了入参以及返回内容。
+
+实现了仓储，但是需要进行DbContext的配置services.AddAFox(typeof(AFDbContext));
+
+默认开启了Swagger，可以使用services.AddAFox(typeof(AFDbContext),false);进行关闭。
+还有很多内容可以进行完善，但是以上的这些已经基本形成了一个完整的框架。
