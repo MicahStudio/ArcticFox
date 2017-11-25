@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 
 namespace ArcticFox.Host.Exceptions
 {
-    public class ExceptionEvent
+    public class ExceptionEvent : IExceptionInterceptor
     {
         private readonly RequestDelegate next;
         public ExceptionEvent(RequestDelegate next)

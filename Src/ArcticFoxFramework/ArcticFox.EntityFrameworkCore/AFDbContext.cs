@@ -6,7 +6,7 @@ using System.Text;
 
 namespace ArcticFox.EntityFrameworkCore
 {
-    public class AFDbContext : AFDbContextBase
+    public class AFDbContext : AppDbContext
     {
         public virtual DbSet<Temp> Temps { set; get; }
         public AFDbContext(DbContextOptions options) : base(options)

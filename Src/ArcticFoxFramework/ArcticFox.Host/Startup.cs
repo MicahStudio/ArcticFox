@@ -6,6 +6,9 @@ using ArcticFox.Extensions;
 using ArcticFox.Host.Exceptions;
 using ArcticFox.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using ArcticFox.Interceptors;
+
 namespace ArcticFox.Host
 {
     public class Startup
@@ -20,13 +23,17 @@ namespace ArcticFox.Host
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddAFox(typeof(AFDbContext));
+            services.AddAFox(options =>
+            {
+                options.Swagger();
+                options.UseDbContext<AFDbContext>();
+                options.BlackList(Configuration.GetSection("blacklist").Get<List<string>>());
+            });
             services.AddMvc();
             // Sqlserver的字符串配置，读取appsettings.json中的ConnectionStrings中的Default
             services.AddEntityFrameworkSqlServer().AddDbContext<AFDbContext>((serviceProvider, options) => options.UseSqlServer(Configuration.GetConnectionString("Default")).UseInternalServiceProvider(serviceProvider));
             // 缓存服务
             services.AddMemoryCache();
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -37,7 +44,7 @@ namespace ArcticFox.Host
                 app.UseDeveloperExceptionPage();
             }
             app.AddAFox();
-            app.UseMiddleware(typeof(ExceptionEvent));
+            app.UseMiddleware<ExceptionEvent>();
             app.UseMvc();
         }
     }

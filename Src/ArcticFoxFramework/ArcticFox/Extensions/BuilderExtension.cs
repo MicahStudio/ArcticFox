@@ -1,7 +1,10 @@
 ﻿using ArcticFox.Configuration;
 using ArcticFox.Interceptors;
+using ArcticFox.Uow;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,11 +15,27 @@ namespace ArcticFox.Extensions
     {
         public static void AddAFox(this IApplicationBuilder app)
         {
-            app.UseSwagger();
-            app.UseSwaggerUI(c =>
+            if (Cfg.EnableSwagger)
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "API V1");
+                app.UseSwagger();
+                app.UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "API V1");
+                });
+            }
+            app.Use(async (context, next) =>
+            {
+                if (Cfg.BlackList.Contains(context.IpV4()))
+                {
+                    await context.Response.WriteAsync("黑名单");
+                }
+                else
+                {
+                    await next.Invoke();
+                }
             });
+            //TODO 如何注入Manager
+            //app.UseMiddleware(typeof(UnitOfWorkMiddleware), options);
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using ArcticFox.Configuration;
 using ArcticFox.EntityFrameworkCore;
 using ArcticFox.Repositories;
+using ArcticFox.Uow;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Swashbuckle.AspNetCore.Swagger;
@@ -12,10 +13,12 @@ namespace ArcticFox.Extensions
 {
     public static class ServiceCollectionExtensions
     {
-        public static void AddAFox(this IServiceCollection services, Type dbContextType, bool EnableSwagger = true)
+        public static void AddAFox(this IServiceCollection services, Action<AFoxConfiguration> actionSetup)
         {
-            services.AddScoped(typeof(AFDbContextBase), dbContextType);
-            if (EnableSwagger)
+            var options = new AFoxConfiguration();
+            actionSetup.Invoke(options);
+            services.AddScoped(typeof(AppDbContext), Cfg.DbContextType);
+            if (Cfg.EnableSwagger)
             {
                 services.AddSwaggerGen(c =>
                 {
@@ -23,6 +26,7 @@ namespace ArcticFox.Extensions
                 });
             }
             services.AddScoped(typeof(IRepository<,>), typeof(Repository<,>));
+            services.AddScoped<UnitOfWorkManager>();
         }
     }
 }

@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using ArcticFox.Controllers.Dtos;
 using ArcticFox.Core.Temp;
 using ArcticFox.Repositories;
+using System.Linq;
 
 namespace ArcticFox.Application.HelloFox
 {
@@ -18,7 +19,10 @@ namespace ArcticFox.Application.HelloFox
         [HttpPost]
         public string Bye()
         {
-            var xx = repository.Insert(new Temp { Name = "xxxxx" });
+            repository.Insert(new Temp { Name = "xxxxx" });
+            repository.Insert(new Temp { Name = "xxxxx" });
+            repository.Insert(new Temp { Name = "xxxxx" });
+            repository.Insert(new Temp { Name = "xxxxx" });
             return "Bye";
         }
         [HttpPost]
@@ -29,7 +33,7 @@ namespace ArcticFox.Application.HelloFox
         [HttpPost]
         public string Hello([FromBody] IdInput<string> input)
         {
-            return input.Id;
+            return repository.Where(t => !t.Name.IsNullOrWhiteSpace()).PageBy(0, 200).FirstOrDefault().Name;
         }
     }
 }
