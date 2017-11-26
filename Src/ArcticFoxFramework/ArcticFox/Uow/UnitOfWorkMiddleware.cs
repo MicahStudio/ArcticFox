@@ -20,8 +20,16 @@ namespace ArcticFox.Uow
         {
             using (var uow = _unitOfWork.Begin())
             {
-                await _next(httpContext);
-                uow.Commit();
+                try
+                {
+                    await _next(httpContext);
+                    uow.Commit();
+                }
+                catch (Exception ex)
+                {
+                    uow.Rollback();
+                    throw ex;
+                }
             }
         }
     }

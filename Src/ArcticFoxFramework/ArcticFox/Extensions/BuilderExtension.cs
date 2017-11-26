@@ -31,12 +31,20 @@ namespace ArcticFox.Extensions
                     {
                         await next.Invoke();
                     }
+                    else
+                    {
+                        await context.Response.WriteAsync("访问限制");
+                    }
                 }
                 else if (Cfg.BlackList.Count > 0)
                 {
                     if (Cfg.BlackList.Contains(context.IpV4()))
                     {
                         await context.Response.WriteAsync("黑名单");
+                    }
+                    else
+                    {
+                        await next.Invoke();
                     }
                 }
                 else
