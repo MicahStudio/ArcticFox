@@ -25,13 +25,14 @@ namespace ArcticFox.Host
         {
             services.AddAFox(options =>
             {
-                options.Swagger();
+                options.Swagger(info: new Swashbuckle.AspNetCore.Swagger.Info { Title = "Web api", Version = "v2", Description = "描述" });
                 options.UseDbContext<AFDbContext>();
                 options.BlackList(Configuration.GetSection("blacklist").Get<List<string>>());
             });
+            services.AddCors();
             services.AddMvc();
             // Sqlserver的字符串配置，读取appsettings.json中的ConnectionStrings中的Default
-            services.AddEntityFrameworkSqlServer().AddDbContext<AFDbContext>((serviceProvider, options) => options.UseSqlServer(Configuration.GetConnectionString("Default")).UseInternalServiceProvider(serviceProvider));
+            services.AddEntityFrameworkSqlServer().AddDbContextPool<AFDbContext>((serviceProvider, options) => options.UseSqlServer(Configuration.GetConnectionString("Default")).UseInternalServiceProvider(serviceProvider));
             // 缓存服务
             services.AddMemoryCache();
         }

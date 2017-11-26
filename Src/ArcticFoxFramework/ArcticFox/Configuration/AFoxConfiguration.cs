@@ -1,5 +1,6 @@
 ﻿using ArcticFox.Extensions;
 using Microsoft.EntityFrameworkCore;
+using Swashbuckle.AspNetCore.Swagger;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,9 +14,11 @@ namespace ArcticFox.Configuration
         /// 是否开启Swagger
         /// </summary>
         /// <param name="enabled"></param>
-        public void Swagger(bool enabled = true)
+        public void Swagger(bool enabled = true, Info info = null)
         {
             Cfg.EnableSwagger = enabled;
+            if (info != null)
+                Cfg.SwaggerInfo = info;
         }
         /// <summary>
         /// 设置DbContext

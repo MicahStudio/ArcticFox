@@ -17,12 +17,12 @@ namespace ArcticFox.Extensions
         {
             var options = new AFoxConfiguration();
             actionSetup.Invoke(options);
-            services.AddScoped(typeof(AppDbContext), Cfg.DbContextType);
+            services.AddSingleton(typeof(AppDbContext), Cfg.DbContextType);
             if (Cfg.EnableSwagger)
             {
                 services.AddSwaggerGen(c =>
                 {
-                    c.SwaggerDoc("v1", new Info { Title = "ArcticFox Web Api", Version = "v1" });
+                    c.SwaggerDoc(Cfg.SwaggerInfo.Version, new Info { Title = Cfg.SwaggerInfo.Title, Version = Cfg.SwaggerInfo.Version });
                 });
             }
             services.AddScoped(typeof(IRepository<,>), typeof(Repository<,>));

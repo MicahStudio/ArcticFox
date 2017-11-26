@@ -27,7 +27,8 @@ namespace ArcticFox.Repositories
         public async Task<int> AddRangeAsync(IEnumerable<TEntity> entitys)
         {
             await Table.AddRangeAsync(entitys);
-            return await dbContext.SaveChangesAsync();
+            return 0;
+            //return await dbContext.SaveChangesAsync();
         }
 
         public TEntity FirstOrDefault()

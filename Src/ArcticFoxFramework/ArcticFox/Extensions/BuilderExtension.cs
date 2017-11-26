@@ -18,9 +18,9 @@ namespace ArcticFox.Extensions
             if (Cfg.EnableSwagger)
             {
                 app.UseSwagger();
-                app.UseSwaggerUI(c =>
+                app.UseSwaggerUI(options =>
                 {
-                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "API V1");
+                    options.SwaggerEndpoint($"/swagger/{Cfg.SwaggerInfo.Version}/swagger.json", Cfg.SwaggerInfo.Description);
                 });
             }
             app.Use(async (context, next) =>
@@ -35,7 +35,7 @@ namespace ArcticFox.Extensions
                 }
             });
             //TODO 如何注入Manager
-            //app.UseMiddleware(typeof(UnitOfWorkMiddleware), options);
+            app.UseMiddleware(typeof(UnitOfWorkMiddleware));
         }
     }
 }
