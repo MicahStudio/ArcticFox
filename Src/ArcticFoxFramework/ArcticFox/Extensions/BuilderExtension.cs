@@ -25,9 +25,19 @@ namespace ArcticFox.Extensions
             }
             app.Use(async (context, next) =>
             {
-                if (Cfg.BlackList.Contains(context.IpV4()))
+                if (Cfg.WhiteList.Count > 0)
                 {
-                    await context.Response.WriteAsync("黑名单");
+                    if (Cfg.WhiteList.Contains(context.IpV4()))
+                    {
+                        await next.Invoke();
+                    }
+                }
+                else if (Cfg.BlackList.Count > 0)
+                {
+                    if (Cfg.BlackList.Contains(context.IpV4()))
+                    {
+                        await context.Response.WriteAsync("黑名单");
+                    }
                 }
                 else
                 {

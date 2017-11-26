@@ -27,9 +27,21 @@ namespace ArcticFox.Configuration
         {
             Cfg.DbContextType = typeof(TDbContext);
         }
+        /// <summary>
+        /// 设置黑名单，设置白名单后，黑名单则无效。
+        /// </summary>
+        /// <param name="Ips"></param>
         public void BlackList(List<string> Ips)
         {
             Cfg.BlackList = Ips;
+        }
+        /// <summary>
+        /// 设置白名单，设置白名单后，黑名单则无效。
+        /// </summary>
+        /// <param name="Ips"></param>
+        public void WhiteList(List<string> Ips)
+        {
+            Cfg.WhiteList = Ips;
         }
     }
 }
