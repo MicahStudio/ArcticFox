@@ -9,12 +9,15 @@ using System.Text;
 using System.Linq;
 using System.Threading.Tasks;
 using ArcticFox.Attributes;
+using Microsoft.EntityFrameworkCore;
 
 namespace ArcticFox.Controllers
 {
     [Route("api/[controller]/[action]")]
     public abstract class AppService : Controller
     {
+        internal AppDbContext _dbContext { get; }
+
         /// <summary>
         /// 审计日志
         /// </summary>
@@ -47,6 +50,8 @@ namespace ArcticFox.Controllers
                     Duration = (DateTime.Now - start).TotalMilliseconds,
                     Exception = JsonConvert.SerializeObject(result?.Exception)
                 };
+                await _dbContext.AuditingLogs.AddAsync(auditing);
+                await _dbContext.SaveChangesAsync();
                 Console.WriteLine(auditing.ToString());
             }
 

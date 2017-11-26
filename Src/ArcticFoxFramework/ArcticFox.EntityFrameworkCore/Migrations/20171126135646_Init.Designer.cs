@@ -11,7 +11,7 @@ using System;
 namespace ArcticFox.EntityFrameworkCore.Migrations
 {
     [DbContext(typeof(AFDbContext))]
-    [Migration("20171124153406_Init")]
+    [Migration("20171126135646_Init")]
     partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -21,6 +21,34 @@ namespace ArcticFox.EntityFrameworkCore.Migrations
                 .HasAnnotation("ProductVersion", "2.0.1-rtm-125")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("ArcticFox.Audiing.AuditingLog", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<double>("Duration");
+
+                    b.Property<string>("Exception");
+
+                    b.Property<DateTime>("ExecutionTime");
+
+                    b.Property<string>("IPAddress");
+
+                    b.Property<string>("Parameters");
+
+                    b.Property<string>("Result");
+
+                    b.Property<string>("ServerName");
+
+                    b.Property<byte[]>("Timestamp")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate();
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AuditingLogs");
+                });
+
             modelBuilder.Entity("ArcticFox.Core.Temp.Temp", b =>
                 {
                     b.Property<int>("Id")
@@ -28,7 +56,9 @@ namespace ArcticFox.EntityFrameworkCore.Migrations
 
                     b.Property<string>("Name");
 
-                    b.Property<byte[]>("Timestamp");
+                    b.Property<byte[]>("Timestamp")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate();
 
                     b.HasKey("Id");
 

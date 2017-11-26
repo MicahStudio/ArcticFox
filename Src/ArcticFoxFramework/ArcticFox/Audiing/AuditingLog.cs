@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace ArcticFox.Audiing
@@ -9,6 +10,8 @@ namespace ArcticFox.Audiing
     /// </summary>
     public class AuditingLog
     {
+        [Key]
+        public long Id { set; get; }
         /// <summary>
         /// 访问的服务名
         /// </summary>
@@ -37,6 +40,9 @@ namespace ArcticFox.Audiing
         /// 返回结果
         /// </summary>
         public string Result { set; get; }
+        [ConcurrencyCheck]
+        [Timestamp]
+        public byte[] Timestamp { get; set; }
         public override string ToString()
         {
             return $"审计：{IPAddress} - {ExecutionTime} 访问了 {ServerName} 传入参数 {Parameters} 耗时 {Duration}ms 返回结果 {Result}";

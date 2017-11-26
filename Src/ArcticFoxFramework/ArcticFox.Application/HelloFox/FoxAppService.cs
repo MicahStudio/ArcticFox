@@ -22,9 +22,6 @@ namespace ArcticFox.Application.HelloFox
         public string Bye()
         {
             repository.Insert(new Temp { Name = "xxxxx" });
-            repository.Insert(new Temp { Name = "xxxxx" });
-            repository.Insert(new Temp { Name = "xxxxx" });
-            repository.Insert(new Temp { Name = "xxxxx" });
             return "Bye";
         }
         [HttpPost]
