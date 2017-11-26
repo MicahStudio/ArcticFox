@@ -6,9 +6,11 @@ using ArcticFox.Controllers.Dtos;
 using ArcticFox.Core.Temp;
 using ArcticFox.Repositories;
 using System.Linq;
+using ArcticFox.Attributes;
 
 namespace ArcticFox.Application.HelloFox
 {
+
     public class FoxAppService : BaseAppService, IFoxAppService
     {
         private readonly IRepository<Temp, int> repository;
@@ -31,6 +33,7 @@ namespace ArcticFox.Application.HelloFox
             throw new Exception("啊！");
         }
         [HttpPost]
+        [Auditing(false)]
         public string Hello([FromBody] IdInput<string> input)
         {
             return repository.Where(t => !t.Name.IsNullOrWhiteSpace()).PageBy(0, 200).FirstOrDefault().Name;

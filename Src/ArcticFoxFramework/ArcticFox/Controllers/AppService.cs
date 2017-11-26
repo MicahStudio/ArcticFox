@@ -1,11 +1,14 @@
 ﻿using ArcticFox.Audiing;
+using ArcticFox.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 using System.Threading.Tasks;
+using ArcticFox.Attributes;
 
 namespace ArcticFox.Controllers
 {
@@ -20,18 +23,33 @@ namespace ArcticFox.Controllers
         /// <returns></returns>
         public override async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
         {
-            var auditing = new AuditingLog
+            var isauditing = true;
+            var start = DateTime.Now;
+            var filter = context.Filters.LastOrDefault(t => t.GetType().Equals(typeof(AuditingAttribute)));
+
+            if (filter != null)
             {
-                ServerName = context.ActionDescriptor.DisplayName,
-                IPAddress = context.HttpContext?.Connection?.RemoteIpAddress?.ToString(),
-                ExecutionTime = DateTime.Now,
-                Parameters = JsonConvert.SerializeObject(context.ActionArguments)
-            };
+                if (filter is AuditingAttribute)
+                {
+                    isauditing = (filter as AuditingAttribute).IsAuditing;
+                }
+            }
             var result = await next();
-            auditing.Result = JsonConvert.SerializeObject(result.Result);
-            auditing.Duration = (DateTime.Now - auditing.ExecutionTime).TotalMilliseconds;
-            auditing.Exception = JsonConvert.SerializeObject(result?.Exception);
-            Console.WriteLine(JsonConvert.SerializeObject(result.Result));
+            if (isauditing)
+            {
+                var auditing = new AuditingLog
+                {
+                    ServerName = context.ActionDescriptor.DisplayName,
+                    IPAddress = context.HttpContext?.Connection?.RemoteIpAddress?.ToString(),
+                    ExecutionTime = start,
+                    Parameters = JsonConvert.SerializeObject(context.ActionArguments),
+                    Result = JsonConvert.SerializeObject(result.Result),
+                    Duration = (DateTime.Now - start).TotalMilliseconds,
+                    Exception = JsonConvert.SerializeObject(result?.Exception)
+                };
+                Console.WriteLine(auditing.ToString());
+            }
+
         }
     }
 }

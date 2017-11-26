@@ -37,5 +37,9 @@ namespace ArcticFox.Audiing
         /// 返回结果
         /// </summary>
         public string Result { set; get; }
+        public override string ToString()
+        {
+            return $"审计：{IPAddress} - {ExecutionTime} 访问了 {ServerName} 传入参数 {Parameters} 耗时 {Duration}ms 返回结果 {Result}";
+        }
     }
 }

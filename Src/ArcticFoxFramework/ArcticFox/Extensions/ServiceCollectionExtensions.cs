@@ -1,4 +1,5 @@
-﻿using ArcticFox.Configuration;
+﻿using ArcticFox.Attributes;
+using ArcticFox.Configuration;
 using ArcticFox.EntityFrameworkCore;
 using ArcticFox.Repositories;
 using ArcticFox.Uow;
