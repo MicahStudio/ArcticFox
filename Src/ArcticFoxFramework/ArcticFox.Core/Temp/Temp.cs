@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ArcticFox.Core.Temp
 {
-    public class Temp : Entity
+    public class Temp : AuditedEntity
     {
         public string Name { set; get; }
     }

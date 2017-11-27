@@ -53,6 +53,11 @@ namespace ArcticFox.EntityFrameworkCore.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<DateTime?>("DeletionTime")
+                        .ValueGeneratedOnAddOrUpdate();
+
+                    b.Property<bool>("IsDeleted");
+
                     b.Property<string>("Name");
 
                     b.Property<byte[]>("Timestamp")

@@ -19,7 +19,7 @@ namespace ArcticFox.Repositories
     /// </summary>
     /// <typeparam name="TEntity">实体</typeparam>
     /// <typeparam name="TPKey">主键类型</typeparam>
-    public interface IRepository<TEntity, TPKey> : IRepository where TEntity : class, IEntity<TPKey>
+    public interface IRepository<TEntity, TPKey> : IRepository where TEntity : class, IEntity<TPKey>, IAuditedEntity<TPKey>
     {
         /// <summary>
         /// 插入一条新纪录
@@ -107,5 +107,6 @@ namespace ArcticFox.Repositories
         /// <param name="predicate"></param>
         /// <returns></returns>
         IEnumerable<TEntity> Where(Func<TEntity, bool> predicate);
+        bool Delete(TEntity entity);
     }
 }

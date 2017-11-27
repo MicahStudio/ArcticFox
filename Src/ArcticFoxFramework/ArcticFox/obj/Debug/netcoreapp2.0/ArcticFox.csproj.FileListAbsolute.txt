@@ -7,8 +7,6 @@ D:\ArcticFox\Src\ArcticFoxFramework\ArcticFox\obj\Debug\netcoreapp2.0\ArcticFox.
 D:\ArcticFox\Src\ArcticFoxFramework\ArcticFox\obj\Debug\netcoreapp2.0\ArcticFox.dll
 D:\ArcticFox\Src\ArcticFoxFramework\ArcticFox\obj\Debug\netcoreapp2.0\ArcticFox.pdb
 D:\ArcticFox\Src\ArcticFoxFramework\ArcticFox\obj\Debug\netcoreapp2.0\ArcticFox.csprojResolveAssemblyReference.cache
-D:\ArcticFox\Src\ArcticFoxFramework\ArcticFox\bin\Debug\netcoreapp2.0\Microsoft.EntityFrameworkCore.dll
-D:\ArcticFox\Src\ArcticFoxFramework\ArcticFox\bin\Debug\netcoreapp2.0\Microsoft.EntityFrameworkCore.xml
 D:\Github\ArcticFox\Src\ArcticFoxFramework\ArcticFox\bin\Debug\netcoreapp2.0\ArcticFox.deps.json
 D:\Github\ArcticFox\Src\ArcticFoxFramework\ArcticFox\bin\Debug\netcoreapp2.0\ArcticFox.dll
 D:\Github\ArcticFox\Src\ArcticFoxFramework\ArcticFox\bin\Debug\netcoreapp2.0\ArcticFox.pdb

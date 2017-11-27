@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ArcticFox.Repositories
 {
-    public class Repository<TEntity, TPKey> : IRepository<TEntity, TPKey> where TEntity : class, IEntity<TPKey>
+    public class Repository<TEntity, TPKey> : IRepository<TEntity, TPKey> where TEntity : class, IEntity<TPKey>, IAuditedEntity<TPKey>
     {
         private readonly AppDbContext dbContext;
         private DbSet<TEntity> Table => dbContext.Set<TEntity>();
@@ -98,6 +98,13 @@ namespace ArcticFox.Repositories
         public IEnumerable<TEntity> Where(Func<TEntity, bool> predicate)
         {
             return Table.Where(predicate);
+        }
+
+        public bool Delete(TEntity entity)
+        {
+            Table.Remove(entity);
+            dbContext.SaveChanges();
+            return true;
         }
     }
 }

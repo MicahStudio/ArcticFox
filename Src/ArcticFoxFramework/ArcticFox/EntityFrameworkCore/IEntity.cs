@@ -11,4 +11,12 @@ namespace ArcticFox.EntityFrameworkCore
     public interface IEntity<TPKey>
     {
     }
+    public interface IAuditedEntity : IEntity<int>
+    {
+
+    }
+    public interface IAuditedEntity<TPkey> : IEntity<TPkey>
+    {
+
+    }
 }

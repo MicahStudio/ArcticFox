@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace ArcticFox.EntityFrameworkCore.Migrations
 {
-    public partial class Add_Temp : Migration
+    public partial class Temp : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -15,6 +15,8 @@ namespace ArcticFox.EntityFrameworkCore.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    DeletionTime = table.Column<DateTime>(nullable: true),
+                    IsDeleted = table.Column<bool>(nullable: false),
                     Name = table.Column<string>(nullable: true),
                     Timestamp = table.Column<byte[]>(rowVersion: true, nullable: true)
                 },

@@ -11,8 +11,8 @@ using System;
 namespace ArcticFox.EntityFrameworkCore.Migrations
 {
     [DbContext(typeof(AFDbContext))]
-    [Migration("20171127044043_Add_Temp")]
-    partial class Add_Temp
+    [Migration("20171127145654_Temp")]
+    partial class Temp
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -53,6 +53,11 @@ namespace ArcticFox.EntityFrameworkCore.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime?>("DeletionTime")
+                        .ValueGeneratedOnAddOrUpdate();
+
+                    b.Property<bool>("IsDeleted");
 
                     b.Property<string>("Name");
 

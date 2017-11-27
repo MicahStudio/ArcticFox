@@ -33,7 +33,9 @@ namespace ArcticFox.Application.HelloFox
         [Auditing(false)]
         public string Hello([FromBody] IdInput<string> input)
         {
-            return repository.Where(t => !t.Name.IsNullOrWhiteSpace()).PageBy(0, 200).FirstOrDefault().Name;
+            var ent = repository.FirstOrDefault();
+            //repository.Delete(ent);
+            return "delete";//repository.Where(t => t.Name.IsNullOrWhiteSpace()).FirstOrDefault().Name;
         }
     }
 }

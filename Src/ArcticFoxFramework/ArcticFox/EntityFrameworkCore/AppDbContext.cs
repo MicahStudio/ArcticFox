@@ -7,6 +7,10 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Linq;
+using System.Linq.Expressions;
+using System.Reflection;
+using Microsoft.Extensions.DependencyModel;
+using ArcticFox.Extensions;
 
 namespace ArcticFox.EntityFrameworkCore
 {
@@ -20,6 +24,15 @@ namespace ArcticFox.EntityFrameworkCore
         {
             Cfg.dbContextOptions = options;
         }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            foreach (var entity in modelBuilder.Model.GetEntityTypes().Where(t => t.FindProperty("IsDeleted") != null))
+            {
+                modelBuilder.FilterDelete(entity.ClrType);
+            }
+
+        }
         public override int SaveChanges(bool acceptAllChangesOnSuccess)
         {
             OnSaveFilter();
@@ -32,7 +45,7 @@ namespace ArcticFox.EntityFrameworkCore
         }
         private void OnSaveFilter()
         {
-            foreach (var entity in ChangeTracker.Entries())
+            foreach (var entity in ChangeTracker.Entries().Where(t => t.Entity is AuditedEntity))
             {
                 switch (entity.State)
                 {
@@ -40,6 +53,7 @@ namespace ArcticFox.EntityFrameworkCore
                         {
                             entity.State = EntityState.Modified;
                             entity.CurrentValues["IsDeleted"] = true;
+                            entity.CurrentValues["DeletionTime"] = DateTime.Now;
                             break;
                         }
                 }
