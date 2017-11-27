@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ArcticFox.EntityFrameworkCore
 {
-    public class Entity : IEntity<int>
+    public abstract class Entity : IEntity<int>
     {
         [Key]
         public int Id { get; set; }
@@ -13,7 +13,7 @@ namespace ArcticFox.EntityFrameworkCore
         [Timestamp]
         public byte[] Timestamp { get; set; }
     }
-    public class Entity<TPKey> : IEntity<TPKey> where TPKey : struct
+    public abstract class Entity<TPKey> : IEntity<TPKey> where TPKey : struct
     {
         [Key]
         public TPKey Id { get; set; }
