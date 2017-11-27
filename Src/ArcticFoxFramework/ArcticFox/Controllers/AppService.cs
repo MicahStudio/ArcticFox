@@ -1,16 +1,13 @@
-﻿using ArcticFox.Audiing;
+﻿using ArcticFox.Attributes;
+using ArcticFox.Audiing;
 using ArcticFox.EntityFrameworkCore;
+using ArcticFox.Factoys;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Linq;
 using System.Threading.Tasks;
-using ArcticFox.Attributes;
-using Microsoft.EntityFrameworkCore;
-using ArcticFox.Factoys;
 
 namespace ArcticFox.Controllers
 {
@@ -18,7 +15,6 @@ namespace ArcticFox.Controllers
     public abstract class AppService : Controller
     {
         internal AppDbContext _dbContext { get; } = DbContextFactory.CreateDbContext();
-
         /// <summary>
         /// 审计日志
         /// </summary>

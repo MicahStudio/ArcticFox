@@ -1,14 +1,10 @@
-﻿using ArcticFox.Attributes;
-using ArcticFox.Configuration;
+﻿using ArcticFox.Configuration;
 using ArcticFox.EntityFrameworkCore;
 using ArcticFox.Repositories;
 using ArcticFox.Uow;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Swashbuckle.AspNetCore.Swagger;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ArcticFox.Extensions
 {

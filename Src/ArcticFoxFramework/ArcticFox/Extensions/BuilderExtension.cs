@@ -1,16 +1,11 @@
 ﻿using ArcticFox.Configuration;
 using ArcticFox.EntityFrameworkCore;
-using ArcticFox.Interceptors;
 using ArcticFox.Uow;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Options;
 using System;
 using System.Linq;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ArcticFox.Extensions
 {

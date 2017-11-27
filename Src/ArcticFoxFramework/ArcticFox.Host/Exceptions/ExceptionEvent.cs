@@ -1,14 +1,11 @@
-﻿using ArcticFox.Interceptors;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
+using System;
+using System.Threading.Tasks;
 
 namespace ArcticFox.Host.Exceptions
 {
-    public class ExceptionEvent : IExceptionInterceptor
+    public class ExceptionEvent
     {
         private readonly RequestDelegate next;
         public ExceptionEvent(RequestDelegate next)
@@ -29,5 +26,6 @@ namespace ArcticFox.Host.Exceptions
                 Console.WriteLine($"异常拦截:{ex.Message}");
             }
         }
+        
     }
 }
