@@ -1,11 +1,14 @@
 ﻿using ArcticFox.Configuration;
+using ArcticFox.EntityFrameworkCore;
 using ArcticFox.Interceptors;
 using ArcticFox.Uow;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Text;
 
@@ -54,6 +57,20 @@ namespace ArcticFox.Extensions
             });
             //TODO 如何注入Manager
             app.UseMiddleware(typeof(UnitOfWorkMiddleware));
+        }
+        /// <summary>
+        /// 自动对Ef迁移
+        /// </summary>
+        /// <param name="app"></param>
+        /// <param name="dbContext"></param>
+        public static void AutoMigration(this IApplicationBuilder app, AppDbContext dbContext)
+        {
+            if (dbContext.Database.GetPendingMigrations().Any())
+            {
+                Console.WriteLine($"开始进行数据库迁移……");
+                dbContext.Database.Migrate();
+                Console.WriteLine("迁移完成");
+            }
         }
     }
 }

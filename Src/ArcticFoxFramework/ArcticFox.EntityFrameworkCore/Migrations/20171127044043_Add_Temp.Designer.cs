@@ -11,8 +11,8 @@ using System;
 namespace ArcticFox.EntityFrameworkCore.Migrations
 {
     [DbContext(typeof(AFDbContext))]
-    [Migration("20171126135646_Init")]
-    partial class Init
+    [Migration("20171127044043_Add_Temp")]
+    partial class Add_Temp
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

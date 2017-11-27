@@ -11,3 +11,16 @@ D:\ArcticFox\Src\ArcticFoxFramework\ArcticFox.EntityFrameworkCore\bin\Debug\netc
 D:\ArcticFox\Src\ArcticFoxFramework\ArcticFox.EntityFrameworkCore\bin\Debug\netcoreapp2.0\ArcticFox.Core.pdb
 D:\ArcticFox\Src\ArcticFoxFramework\ArcticFox.EntityFrameworkCore\bin\Debug\netcoreapp2.0\ArcticFox.pdb
 D:\ArcticFox\Src\ArcticFoxFramework\ArcticFox.EntityFrameworkCore\obj\Debug\netcoreapp2.0\ArcticFox.EntityFrameworkCore.csprojResolveAssemblyReference.cache
+D:\Github\ArcticFox\Src\ArcticFoxFramework\ArcticFox.EntityFrameworkCore\bin\Debug\netcoreapp2.0\ArcticFox.EntityFrameworkCore.deps.json
+D:\Github\ArcticFox\Src\ArcticFoxFramework\ArcticFox.EntityFrameworkCore\bin\Debug\netcoreapp2.0\ArcticFox.EntityFrameworkCore.dll
+D:\Github\ArcticFox\Src\ArcticFoxFramework\ArcticFox.EntityFrameworkCore\bin\Debug\netcoreapp2.0\ArcticFox.EntityFrameworkCore.pdb
+D:\Github\ArcticFox\Src\ArcticFoxFramework\ArcticFox.EntityFrameworkCore\bin\Debug\netcoreapp2.0\ArcticFox.Core.dll
+D:\Github\ArcticFox\Src\ArcticFoxFramework\ArcticFox.EntityFrameworkCore\bin\Debug\netcoreapp2.0\ArcticFox.dll
+D:\Github\ArcticFox\Src\ArcticFoxFramework\ArcticFox.EntityFrameworkCore\bin\Debug\netcoreapp2.0\ArcticFox.Core.pdb
+D:\Github\ArcticFox\Src\ArcticFoxFramework\ArcticFox.EntityFrameworkCore\bin\Debug\netcoreapp2.0\ArcticFox.pdb
+D:\Github\ArcticFox\Src\ArcticFoxFramework\ArcticFox.EntityFrameworkCore\obj\Debug\netcoreapp2.0\ArcticFox.EntityFrameworkCore.csprojResolveAssemblyReference.cache
+D:\Github\ArcticFox\Src\ArcticFoxFramework\ArcticFox.EntityFrameworkCore\obj\Debug\netcoreapp2.0\ArcticFox.EntityFrameworkCore.csproj.CoreCompileInputs.cache
+D:\Github\ArcticFox\Src\ArcticFoxFramework\ArcticFox.EntityFrameworkCore\obj\Debug\netcoreapp2.0\ArcticFox.EntityFrameworkCore.AssemblyInfoInputs.cache
+D:\Github\ArcticFox\Src\ArcticFoxFramework\ArcticFox.EntityFrameworkCore\obj\Debug\netcoreapp2.0\ArcticFox.EntityFrameworkCore.AssemblyInfo.cs
+D:\Github\ArcticFox\Src\ArcticFoxFramework\ArcticFox.EntityFrameworkCore\obj\Debug\netcoreapp2.0\ArcticFox.EntityFrameworkCore.dll
+D:\Github\ArcticFox\Src\ArcticFoxFramework\ArcticFox.EntityFrameworkCore\obj\Debug\netcoreapp2.0\ArcticFox.EntityFrameworkCore.pdb

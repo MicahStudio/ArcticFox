@@ -1,4 +1,5 @@
-﻿using ArcticFox.Extensions;
+﻿using ArcticFox.EntityFrameworkCore;
+using ArcticFox.Extensions;
 using Microsoft.EntityFrameworkCore;
 using Swashbuckle.AspNetCore.Swagger;
 using System;

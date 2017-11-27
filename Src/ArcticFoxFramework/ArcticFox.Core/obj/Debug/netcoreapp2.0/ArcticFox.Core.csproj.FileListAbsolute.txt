@@ -11,3 +11,14 @@ D:\ArcticFox\Src\ArcticFoxFramework\ArcticFox.Core\bin\Debug\netcoreapp2.0\Arcti
 D:\ArcticFox\Src\ArcticFoxFramework\ArcticFox.Core\bin\Debug\netcoreapp2.0\ArcticFox.pdb
 D:\ArcticFox\Src\ArcticFoxFramework\ArcticFox.Core\bin\Debug\netcoreapp2.0\Microsoft.EntityFrameworkCore.dll
 D:\ArcticFox\Src\ArcticFoxFramework\ArcticFox.Core\bin\Debug\netcoreapp2.0\Microsoft.EntityFrameworkCore.xml
+D:\Github\ArcticFox\Src\ArcticFoxFramework\ArcticFox.Core\bin\Debug\netcoreapp2.0\ArcticFox.Core.deps.json
+D:\Github\ArcticFox\Src\ArcticFoxFramework\ArcticFox.Core\bin\Debug\netcoreapp2.0\ArcticFox.Core.dll
+D:\Github\ArcticFox\Src\ArcticFoxFramework\ArcticFox.Core\bin\Debug\netcoreapp2.0\ArcticFox.Core.pdb
+D:\Github\ArcticFox\Src\ArcticFoxFramework\ArcticFox.Core\bin\Debug\netcoreapp2.0\ArcticFox.dll
+D:\Github\ArcticFox\Src\ArcticFoxFramework\ArcticFox.Core\bin\Debug\netcoreapp2.0\ArcticFox.pdb
+D:\Github\ArcticFox\Src\ArcticFoxFramework\ArcticFox.Core\obj\Debug\netcoreapp2.0\ArcticFox.Core.csprojResolveAssemblyReference.cache
+D:\Github\ArcticFox\Src\ArcticFoxFramework\ArcticFox.Core\obj\Debug\netcoreapp2.0\ArcticFox.Core.csproj.CoreCompileInputs.cache
+D:\Github\ArcticFox\Src\ArcticFoxFramework\ArcticFox.Core\obj\Debug\netcoreapp2.0\ArcticFox.Core.AssemblyInfoInputs.cache
+D:\Github\ArcticFox\Src\ArcticFoxFramework\ArcticFox.Core\obj\Debug\netcoreapp2.0\ArcticFox.Core.AssemblyInfo.cs
+D:\Github\ArcticFox\Src\ArcticFoxFramework\ArcticFox.Core\obj\Debug\netcoreapp2.0\ArcticFox.Core.dll
+D:\Github\ArcticFox\Src\ArcticFoxFramework\ArcticFox.Core\obj\Debug\netcoreapp2.0\ArcticFox.Core.pdb
