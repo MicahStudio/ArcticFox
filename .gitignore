@@ -32,6 +32,7 @@ $tf/
 *.nuget.props
 *.nuget.targets
 
+*.cache
 *.suo
 *.user
 *.userosscache
