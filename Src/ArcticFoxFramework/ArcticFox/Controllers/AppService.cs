@@ -10,13 +10,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using ArcticFox.Attributes;
 using Microsoft.EntityFrameworkCore;
+using ArcticFox.Factoys;
 
 namespace ArcticFox.Controllers
 {
     [Route("api/[controller]/[action]")]
     public abstract class AppService : Controller
     {
-        internal AppDbContext _dbContext { get; }
+        internal AppDbContext _dbContext { get; } = DbContextFactory.CreateDbContext();
 
         /// <summary>
         /// 审计日志
@@ -55,6 +56,11 @@ namespace ArcticFox.Controllers
                 Console.WriteLine(auditing.ToString());
             }
 
+        }
+        protected override void Dispose(bool disposing)
+        {
+            _dbContext.Dispose();
+            base.Dispose(disposing);
         }
     }
 }

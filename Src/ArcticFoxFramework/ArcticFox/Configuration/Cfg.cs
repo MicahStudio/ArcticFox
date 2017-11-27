@@ -1,4 +1,5 @@
-﻿using Swashbuckle.AspNetCore.Swagger;
+﻿using Microsoft.EntityFrameworkCore;
+using Swashbuckle.AspNetCore.Swagger;
 using System;
 using System.Collections.Generic;
 using System.Net;
@@ -13,5 +14,6 @@ namespace ArcticFox.Configuration
         public static Type DbContextType { set; get; }
         public static List<String> BlackList { set; get; } = new List<String>();
         public static List<string> WhiteList { set; get; } = new List<string>();
+        public static DbContextOptions dbContextOptions { set; get; }
     }
 }

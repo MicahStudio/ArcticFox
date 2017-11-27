@@ -1,4 +1,5 @@
 ﻿using ArcticFox.Audiing;
+using ArcticFox.Configuration;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,8 @@ namespace ArcticFox.EntityFrameworkCore
         public virtual DbSet<AuditingLog> AuditingLogs { set; get; }
         public AppDbContext(DbContextOptions options) : base(options)
         {
+            Cfg.dbContextOptions = options;
+            Console.WriteLine(options.ToString());
         }
     }
 }
