@@ -1,16 +1,11 @@
-﻿using ArcticFox.Audiing;
+﻿using ArcticFox.Auditing;
 using ArcticFox.Configuration;
+using ArcticFox.Extensions;
 using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Reflection;
-using Microsoft.Extensions.DependencyModel;
-using ArcticFox.Extensions;
 
 namespace ArcticFox.EntityFrameworkCore
 {

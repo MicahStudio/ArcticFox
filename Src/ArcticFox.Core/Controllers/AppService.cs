@@ -1,5 +1,5 @@
 ﻿using ArcticFox.Attributes;
-using ArcticFox.Audiing;
+using ArcticFox.Auditing;
 using ArcticFox.EntityFrameworkCore;
 using ArcticFox.Factoys;
 using Microsoft.AspNetCore.Mvc;
